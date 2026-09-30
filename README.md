@@ -70,6 +70,7 @@ Sample books are loaded automatically when the backend starts. Books added from 
 
 - Student: `student` / `student123`
 - Admin: `admin` / `admin123`
+- Librarian: `librarian` / `library123`
 
 ## Team and Project
 

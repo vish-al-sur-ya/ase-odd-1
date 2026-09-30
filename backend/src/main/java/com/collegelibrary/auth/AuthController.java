@@ -17,9 +17,10 @@ public class AuthController {
         String password = details.getOrDefault("password", "");
         boolean student = username.equals("student") && password.equals("student123");
         boolean admin = username.equals("admin") && password.equals("admin123");
-        if (!student && !admin) {
+        boolean librarian = username.equals("librarian") && password.equals("library123");
+        if (!student && !admin && !librarian) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid username or password");
         }
-        return Map.of("username", username, "role", admin ? "ADMIN" : "STUDENT");
+        return Map.of("username", username, "role", student ? "STUDENT" : "ADMIN");
     }
 }
